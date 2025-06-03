@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e15501f-7f31-481b-852e-ea8a26db9054" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/WebSecurity.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/cors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/https.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/jwt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/reset.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/reveal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/reveal.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/reveal.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/reveal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/reveal.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/beige.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/black-contrast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/black.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/blood.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/dracula.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/league.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/moon.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/night.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/serif.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/simple.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/sky.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/solarized.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/white-contrast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/white.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/theme/white_contrast_compact_verbatim_headers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/highlight/highlight.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/highlight/highlight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/highlight/monokai.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/highlight/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/highlight/zenburn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/markdown/markdown.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/markdown/markdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/markdown/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/math/katex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/math/math.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/math/math.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/math/mathjax2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/math/mathjax3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/math/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/notes/notes.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/notes/notes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/notes/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/notes/speaker-view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/search/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/search/search.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/search/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/zoom/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/zoom/zoom.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plugin/zoom/zoom.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2xxTfaKC8DPICvTGdHhU7TyXfj9" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.index.html (1).executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "JavaScript Debug.math.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WebSecurity/reveal.js-master/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WebSecurity/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="math.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WebSecurity/reveal.js-master/examples/math.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="JavaScript Debug.math.html" />
+        <item itemvalue="JavaScript Debug.index.html (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
