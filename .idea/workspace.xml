@@ -5,79 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e15501f-7f31-481b-852e-ea8a26db9054" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/WebSecurity.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/cors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/https.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/jwt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/reveal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/reveal.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/reveal.esm.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/reveal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/reveal.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/beige.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/black-contrast.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/black.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/blood.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/dracula.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/league-gothic/league-gothic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/fonts/source-sans-pro/source-sans-pro.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/league.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/moon.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/night.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/serif.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/simple.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/sky.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/solarized.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/white-contrast.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/white.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/theme/white_contrast_compact_verbatim_headers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/highlight/highlight.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/highlight/highlight.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/highlight/monokai.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/highlight/plugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/highlight/zenburn.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/markdown/markdown.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/markdown/markdown.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/markdown/plugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/math/katex.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/math/math.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/math/math.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/math/mathjax2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/math/mathjax3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/math/plugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/notes/notes.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/notes/notes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/notes/plugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/notes/speaker-view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/search/plugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/search/search.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/search/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/zoom/plugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/zoom/zoom.esm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugin/zoom/zoom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +40,8 @@
     "JavaScript Debug.index.html.executor": "Run",
     "JavaScript Debug.math.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "gh-pages",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
