@@ -53,7 +53,7 @@
   const name = new URLSearchParams(location.search).get("name");
   document.getElementById("user").innerHTML = name;
 &lt;/script&gt;</code></pre>
-					<p style="font-size: 25px">Example: <code>https://example.com/?name=&lt;script&gt;alert("XSS")&lt;/script&gt;</code></p>
+					<p style="font-size: 25px">Example: <code>https://example.com?name=&lt;script&gt;alert("XSS")&lt;/script&gt;</code></p>
 				</section>
 
 				<section>
@@ -72,7 +72,7 @@
 					<pre><code>&lt;img src="https://bank.com/transfer?amount=1000&to=attacker" /&gt;</code></pre>
 					<p>Protection:</p>
 					<ul>
-						<li>CSRF-tokens: <pre><code>&lt;form method="POST" action="/transfer"&gt;
+						<li>CSRF-tokens: <pre style="width: 100%;"><code>&lt;form method="POST" action="/transfer"&gt;
 	&lt;input type="hidden" name="csrfToken" value="abc123" /&gt;
 	...
 &lt;/form&gt;</code></pre></li>
@@ -170,8 +170,14 @@ Authorization: Bearer &lt;token&gt;
 					<h3>API3: Property Level Authorization</h3>
 					<p>APIs return more data than necessary. Clients should only receive authorized properties.</p>
 					<p>Changing hidden properties of objects.</p>
-					<pre><code>{
-  "description": "cats",
+					<pre><code>PUT /api/video/update_video
+
+{
+  "description": "a funny video about cats"
+}
+
+{
+  "description": "a funny video about cats",
   "blocked": false
 }</code></pre>
 				</section>
@@ -239,7 +245,9 @@ Host: willyo.net
 				<section>
 					<h3>API8: Security Misconfiguration</h3>
 					<p>Default configs, missing security headers, open ports.</p>
+					<p style="font-size: 30px">A social network website offers a "Direct Message" feature that allows users to keep private conversations. To retrieve new messages for a specific conversation, the website issues the following API request (user interaction is not required):</p>
 					<pre><code>GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA</code></pre>
+					<p style="font-size: 30px">Because the API response does not include the Cache-Control HTTP response header, private conversations end-up cached by the web browser, allowing malicious actors to retrieve them from the browser cache files in the filesystem.</p>
 				</section>
 
 				<section>
@@ -252,7 +260,7 @@ Host: willyo.net
 
 				<section>
 					<h3>API10: Unsafe Consumption of APIs</h3>
-					<p>These three vulnerabilities represent common pitfalls in API development and deployment. Misconfigurations, poor inventory practices, and unsafe third-party API consumption can open doors for various attacks. Prioritizing these areas is crucial for comprehensive API security.</p>
+					<p>Misconfigurations, poor inventory practices, and unsafe third-party API consumption can open doors for various attacks. Prioritizing these areas is crucial for comprehensive API security.</p>
 				</section>
 
 				<section>
@@ -326,7 +334,7 @@ Location: https://attacker.com/</code></pre>
 					<ul>
 						<li>
 							<div>JWT Security</div>
-							<div style="font-size: 26px;">JUse tokens carefully with best practices to avoid leaks.</div>
+							<div style="font-size: 26px;">Use tokens carefully with best practices to avoid leaks.</div>
 						</li>
 						<li>
 							<div>Session Management</div>
@@ -373,6 +381,7 @@ Location: https://attacker.com/</code></pre>
 			<section>
 				<section><h2>5. Browser extensions</h2></section>
 				<section>
+					<h2>Manifest file format</h2>
 					<pre><code>{
   "manifest_version": 3,
   "name": "Run script automatically",
