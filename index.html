@@ -1,90 +1,93 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Web Security</title>
-		<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <title>Web Security</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-	<div class="reveal">
-		<div class="slides">
-			<section>
-				<h1>Web Security</h1>
-				<h3>Web Applications, Authentication and Authorization</h3>
-			</section>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+    <section class="slides">
+        <section>
+            <h1>Web Security</h1>
+            <h3>Web Applications, Authentication and Authorization</h3>
+        </section>
 
-			<section>
-				<section>
-					<h2>Introduction to Web Security</h2>
-					<ul>
-						<li>Web Security Basics</li>
-						<li>Understanding the OWASP Top 10</li>
-						<li>Authentication & Authorization</li>
-						<li>Secure Authentication & Data Validation</li>
-						<li>Browser extensions</li>
-						<li>Cheat Sheets</li>
-						<li>Conclusion / Q&A</li>
-					</ul>
-				</section>
-			</section>
+        <section>
+            <section>
+                <h2>Introduction to Web Security</h2>
+                <ul>
+                    <li>Web Security Basics</li>
+                    <li>Understanding the OWASP Top 10</li>
+                    <li>Authentication & Authorization</li>
+                    <li>Secure Authentication & Data Validation</li>
+                    <li>Browser extensions</li>
+                    <li>Cheat Sheets</li>
+                    <li>Conclusion / Q&A</li>
+                </ul>
+            </section>
+        </section>
 
-			<section>
-				<section><h2>1. Web Security Basics</h2></section>
+        <section>
+            <section><h2>1. Web Security Basics</h2></section>
 
-				<section>
-					<h3>XSS (Cross-Site Scripting)</h3>
-					<p>Allows malicious scripts to be injected into a website.</p>
-					<ul>
-						<li>Theft of cookies and session tokens</li>
-						<li>Actions on behalf of the user</li>
-						<li>Fake UI and phishing</li>
-					</ul>
-					<pre><code>&lt;p&gt;Hi, &lt;span id="user"&gt;&lt;/span&gt;&lt;/p&gt;
+            <section>
+                <h3>XSS (Cross-Site Scripting)</h3>
+                <p>Allows malicious scripts to be injected into a website.</p>
+                <ul>
+                    <li>Theft of cookies and session tokens</li>
+                    <li>Actions on behalf of the user</li>
+                    <li>Fake UI and phishing</li>
+                </ul>
+                <pre><code>&lt;p&gt;Hi, &lt;span id="user"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;script&gt;
   const name = new URLSearchParams(location.search).get("name");
   document.getElementById("user").innerHTML = name;
 &lt;/script&gt;</code></pre>
-					<p style="font-size: 25px">Example: <code>https://example.com?name=&lt;script&gt;alert("XSS")&lt;/script&gt;</code></p>
-				</section>
+                <p style="font-size: 25px">Example: <code>https://example.com?name=&lt;script&gt;alert("XSS")&lt;/script&gt;</code>
+                </p>
+            </section>
 
-				<section>
-					<h3>XSS protection</h3>
-					<ul>
-						<li>Escaping (textContent instead of innerHTML)</li>
-						<li>CSP: <code style="font-size: 30px;">Content-Security-Policy: default-src 'self'</code></li>
-						<li>Frameworks: Angular, React, Vue</li>
-					</ul>
-					<pre><code>&lt;p&gt;{{ userInput }}&lt;/p&gt; // Angular template</code></pre>
-				</section>
+            <section>
+                <h3>XSS protection</h3>
+                <ul>
+                    <li>Escaping (textContent instead of innerHTML)</li>
+                    <li>CSP: <code style="font-size: 30px;">Content-Security-Policy: default-src 'self'</code></li>
+                    <li>Frameworks: Angular, React, Vue</li>
+                </ul>
+                <pre><code>&lt;p&gt;{{ userInput }}&lt;/p&gt; // Angular template</code></pre>
+            </section>
 
-				<section>
-					<h3>CSRF (Cross-Site Request Forgery)</h3>
-					<p>The attack forces actions using authorization cookies.</p>
-					<pre><code>&lt;img src="https://bank.com/transfer?amount=1000&to=attacker" /&gt;</code></pre>
-					<p>Protection:</p>
-					<ul>
-						<li>CSRF-tokens: <pre style="width: 100%;"><code>&lt;form method="POST" action="/transfer"&gt;
+            <section>
+                <h3>CSRF (Cross-Site Request Forgery)</h3>
+                <p>The attack forces actions using authorization cookies.</p>
+                <pre><code>&lt;img src="https://bank.com/transfer?amount=1000&to=attacker" /&gt;</code></pre>
+                <p>Protection:</p>
+                <ul>
+                    <li>CSRF-tokens:
+                        <pre style="width: 100%;"><code>&lt;form method="POST" action="/transfer"&gt;
 	&lt;input type="hidden" name="csrfToken" value="abc123" /&gt;
 	...
-&lt;/form&gt;</code></pre></li>
-						<li>Origin / Referer</li>
-						<li>SameSite cookies</li>
-					</ul>
-				</section>
+&lt;/form&gt;</code></pre>
+                    </li>
+                    <li>Origin / Referer</li>
+                    <li>SameSite cookies</li>
+                </ul>
+            </section>
 
-				<section>
-					<h3>SQL Injection</h3>
-					<p>Implementing SQL code through query parameters.</p>
-					<pre><code>https://site.com/login?user=admin&pass=123
+            <section>
+                <h3>SQL Injection</h3>
+                <p>Implementing SQL code through query parameters.</p>
+                <pre><code>https://site.com/login?user=admin&pass=123
 https://site.com/login?user=admin'--&pass=whatever
 
 app.get('/login', (req, res) => {
@@ -93,84 +96,97 @@ app.get('/login', (req, res) => {
 });
 
 SELECT * FROM users WHERE username = 'admin' --' AND password = '123'</code></pre>
-					<p>Protection:</p>
-					<ul>
-						<li>Parameterization of requests</li>
-						<li>ORM libraries</li>
-						<li>Restricting access rights</li>
-					</ul>
-				</section>
+                <p>Protection:</p>
+                <ul>
+                    <li>Parameterization of requests</li>
+                    <li>ORM libraries</li>
+                    <li>Restricting access rights</li>
+                </ul>
+            </section>
 
-				<section>
-					<h3>MITM (Man-in-the-middle)</h3>
-					<P>[Client] <---> [😈 MITM] <---> [Server]</P>
-					<p>Protection:</p>
-					<p>HTTPS = HTTP + TLS. Encrypts data and authenticates the server.</p>
-					<ul>
-						<li>Encryption</li>
-						<li>Authentication</li>
-						<li>Integrity</li>
-					</ul>
-				</section>
+            <section>
+                <h3>MITM (Man-in-the-middle)</h3>
+                <P>[Client] <---> [😈 MITM] <---> [Server]</P>
+                <p>Protection:</p>
+                <p>HTTPS = HTTP + TLS. Encrypts data and authenticates the server.</p>
+                <ul>
+                    <li>Encryption</li>
+                    <li>Authentication</li>
+                    <li>Integrity</li>
+                </ul>
+            </section>
 
-				<section>
-					<img src="assets/https.jpg" alt="https">
-				</section>
+            <section>
+                <img src="assets/https.jpg" alt="https">
+            </section>
 
-				<section>
-					<h3>CORS</h3>
-					<p style="font-size: 28px;">Controls cross-domain requests. Requires configuration on the server.</p>
-					<img src="assets/cors.png" alt="cors" style="width: 516px;">
-				</section>
+            <section>
+                <h3>CORS</h3>
+                <p style="font-size: 28px;">Controls cross-domain requests. Requires configuration on the server.</p>
+                <img src="assets/cors.png" alt="cors" style="width: 516px;">
+            </section>
 
-				<section>
-					<h3>CSP (Content-Security-Policy)</h3>
-					<p>Restricts where resources are downloaded from.</p>
-					<ul>
-						<li>XSS attacks (injection of malicious scripts)</li>
-						<li>Clickjacking</li>
-						<li>Uploading unauthorized resources</li>
-					</ul>
-					<pre><code>Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.com;</code></pre>
-				</section>
+            <section>
+                <h3>CSP (Content-Security-Policy)</h3>
+                <p>Restricts where resources are downloaded from.</p>
+                <ul>
+                    <li>XSS attacks (injection of malicious scripts)</li>
+                    <li>Clickjacking</li>
+                    <li>Uploading unauthorized resources</li>
+                </ul>
+                <pre><code>Content-Security-Policy: default-src 'self'; script-src 'self' https://trusted.com;</code></pre>
+            </section>
 
-				<section>
-					<h3>Secure Headers</h3>
-					<ul>
-						<li><div>Strict-Transport-Security</div><div>(Enforces HTTPS for all future connections)</div></li>
-						<li><div>X-Frame-Options</div><div>(Prevents clickjacking via iframes)</div></li>
-						<li><div>X-Content-Type-Options</div><div>(Prevents MIME type sniffing attacks)</div></li>
-						<li><div>Referrer-Policy</div><div>(Controls how much referrer information is sent)</div></li>
-					</ul>
-				</section>
-			</section>
+            <section>
+                <h3>Secure Headers</h3>
+                <ul>
+                    <li>
+                        <div>Strict-Transport-Security</div>
+                        <div>(Enforces HTTPS for all future connections)</div>
+                    </li>
+                    <li>
+                        <div>X-Frame-Options</div>
+                        <div>(Prevents clickjacking via iframes)</div>
+                    </li>
+                    <li>
+                        <div>X-Content-Type-Options</div>
+                        <div>(Prevents MIME type sniffing attacks)</div>
+                    </li>
+                    <li>
+                        <div>Referrer-Policy</div>
+                        <div>(Controls how much referrer information is sent)</div>
+                    </li>
+                </ul>
+            </section>
+        </section>
 
-			<section>
-				<section>
-					<h2>2. Understanding the OWASP Top 10</h2>
-					<p>Open Web Application Security Project</p>
-				</section>
+        <section>
+            <section>
+                <h2>2. Understanding the OWASP Top 10</h2>
+                <p>Open Web Application Security Project</p>
+            </section>
 
-				<section>
-					<h3>API1: Broken Object Level Authorization (BOLA)</h3>
-					<p>Objects are available without checking authorization by ID.</p>
-					<pre><code>GET /api/v1/users/{id}/profile</code></pre>
-				</section>
+            <section>
+                <h3>API1: Broken Object Level Authorization (BOLA)</h3>
+                <p>Objects are available without checking authorization by ID.</p>
+                <pre><code>GET /api/v1/users/{id}/profile</code></pre>
+            </section>
 
-				<section>
-					<h3>API2: Broken Authentication</h3>
-					<p>Authentication mechanisms are often flawed. This allows attackers to bypass security or impersonate users.</p>
-					<p>No password verification when changing email.</p>
-					<pre><code>PUT /account
+            <section>
+                <h3>API2: Broken Authentication</h3>
+                <p>Authentication mechanisms are often flawed. This allows attackers to bypass security or impersonate
+                    users.</p>
+                <p>No password verification when changing email.</p>
+                <pre><code>PUT /account
 Authorization: Bearer &lt;token&gt;
 { "email": "..." }</code></pre>
-				</section>
+            </section>
 
-				<section>
-					<h3>API3: Property Level Authorization</h3>
-					<p>APIs return more data than necessary. Clients should only receive authorized properties.</p>
-					<p>Changing hidden properties of objects.</p>
-					<pre><code>PUT /api/video/update_video
+            <section>
+                <h3>API3: Property Level Authorization</h3>
+                <p>APIs return more data than necessary. Clients should only receive authorized properties.</p>
+                <p>Changing hidden properties of objects.</p>
+                <pre><code>PUT /api/video/update_video
 
 {
   "description": "a funny video about cats"
@@ -180,121 +196,144 @@ Authorization: Bearer &lt;token&gt;
   "description": "a funny video about cats",
   "blocked": false
 }</code></pre>
-				</section>
+            </section>
 
-				<section>
-					<h3>API4: Resource Consumption</h3>
-					<p>APIs consume resources like network bandwidth, CPU, memory, and storage. Unrestricted consumption can lead to Denial of Service (DoS) or increased operational costs. Implement proper rate limiting and quotas.</p>
-				</section>
+            <section>
+                <h3>API4: Resource Consumption</h3>
+                <p>APIs consume resources like network bandwidth, CPU, memory, and storage. Unrestricted consumption can
+                    lead to Denial of Service (DoS) or increased operational costs. Implement proper rate limiting and
+                    quotas.</p>
+            </section>
 
-				<section>
-					<h3>API4: Resource Consumption</h3>
-					<p>SMS API attack. Huge costs.</p>
-					<pre><code>POST /initiate_forgot_password
+            <section>
+                <h3>API4: Resource Consumption</h3>
+                <p>SMS API attack. Huge costs.</p>
+                <pre><code>POST /initiate_forgot_password
 
 {
   "step": 1,
   "user_number": "6501113434"
 }</code></pre>
-					<pre><code>POST /sms/send_reset_pass_code
+                <pre><code>POST /sms/send_reset_pass_code
 
 Host: willyo.net
 
 {
   "phone_number": "6501113434"
 }</code></pre>
-				</section>
+            </section>
 
-				<section>
-					<h3>API5: Function Level Authorization</h3>
-					<p>This vulnerability arises from poorly implemented authorization at the function level. Attackers can bypass authorization checks to access privileged functions or data.</p>
-					<pre><code>API call to GET /api/invites/{invite_guid}</code></pre>
-					<pre><code>POST /api/invites/new
+            <section>
+                <h3>API5: Function Level Authorization</h3>
+                <p>This vulnerability arises from poorly implemented authorization at the function level. Attackers can
+                    bypass authorization checks to access privileged functions or data.</p>
+                <pre><code>API call to GET /api/invites/{invite_guid}</code></pre>
+                <pre><code>POST /api/invites/new
 
 {
   "email": "attacker@somehost.com",
   "role":"admin"
 }</code></pre>
-				</section>
+            </section>
 
-				<section>
-					<h3>API6: Sensitive Business Flows</h3>
-					<p>This risk occurs when APIs expose business flows that can be abused if used excessively in an automated manner. This is not necessarily due to implementation bugs, but rather a lack of business logic protection.</p>
-				</section>
+            <section>
+                <h3>API6: Sensitive Business Flows</h3>
+                <p>This risk occurs when APIs expose business flows that can be abused if used excessively in an
+                    automated manner. This is not necessarily due to implementation bugs, but rather a lack of business
+                    logic protection.</p>
+            </section>
 
-				<section>
-					<h3>API7: SSRF (Server Side Request Forgery)</h3>
-					<p>SSRF vulnerabilities occur when an API fetches a remote resource without properly validating the user-supplied URI. This allows attackers to coerce the application into making requests to unexpected destinations.</p>
-				</section>
+            <section>
+                <h3>API7: SSRF (Server Side Request Forgery)</h3>
+                <p>SSRF vulnerabilities occur when an API fetches a remote resource without properly validating the
+                    user-supplied URI. This allows attackers to coerce the application into making requests to
+                    unexpected destinations.</p>
+            </section>
 
-				<section>
-					<h3>API7: SSRF (Server Side Request Forgery)</h3>
-					<p>Requests to internal resources via API.</p>
-					<pre><code>POST /api/profile/upload_picture
+            <section>
+                <h3>API7: SSRF (Server Side Request Forgery)</h3>
+                <p>Requests to internal resources via API.</p>
+                <pre><code>POST /api/profile/upload_picture
 
 {
   "picture_url": "http://example.com/profile_pic.jpg"
 }</code></pre>
-					<pre><code>
+                <pre><code>
 {
   "picture_url": "localhost:8080"
 }
 					</code></pre>
-				</section>
+            </section>
 
-				<section>
-					<h3>API8: Security Misconfiguration</h3>
-					<p>Default configs, missing security headers, open ports.</p>
-					<p style="font-size: 30px">A social network website offers a "Direct Message" feature that allows users to keep private conversations. To retrieve new messages for a specific conversation, the website issues the following API request (user interaction is not required):</p>
-					<pre><code>GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA</code></pre>
-					<p style="font-size: 30px">Because the API response does not include the Cache-Control HTTP response header, private conversations end-up cached by the web browser, allowing malicious actors to retrieve them from the browser cache files in the filesystem.</p>
-				</section>
+            <section>
+                <h3>API8: Security Misconfiguration</h3>
+                <p>Default configs, missing security headers, open ports.</p>
+                <p style="font-size: 30px">A social network website offers a "Direct Message" feature that allows users
+                    to keep private conversations. To retrieve new messages for a specific conversation, the website
+                    issues the following API request (user interaction is not required):</p>
+                <pre><code>GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA</code></pre>
+                <p style="font-size: 30px">Because the API response does not include the Cache-Control HTTP response
+                    header, private conversations end-up cached by the web browser, allowing malicious actors to
+                    retrieve them from the browser cache files in the filesystem.</p>
+            </section>
 
-				<section>
-					<h3>API9: Inventory Management</h3>
-					<p>Undocumented APIs, deprecated versions, debug endpoints.</p>
-					<p style="font-size: 20px">A social network allows developers of independent apps to integrate with it. As part of this process a consent is requested from the end user, so the social network can share the user's personal information with the independent app.</p>
-					<p style="font-size: 20px">The data flow between the social network and the independent apps is not restrictive or monitored enough, allowing independent apps to access not only the user information but also the private information of all of their friends.</p>
-					<p style="font-size: 20px">A consulting firm builds a malicious app and manages to get the consent of 270,000 users. Because of the flaw, the consulting firm manages to get access to the private information of 50,000,000 users. Later, the consulting firm sells the information for malicious purposes.</p>
-				</section>
+            <section>
+                <h3>API9: Inventory Management</h3>
+                <p>Undocumented APIs, deprecated versions, debug endpoints.</p>
+                <p style="font-size: 20px">A social network allows developers of independent apps to integrate with it.
+                    As part of this process a consent is requested from the end user, so the social network can share
+                    the user's personal information with the independent app.</p>
+                <p style="font-size: 20px">The data flow between the social network and the independent apps is not
+                    restrictive or monitored enough, allowing independent apps to access not only the user information
+                    but also the private information of all of their friends.</p>
+                <p style="font-size: 20px">A consulting firm builds a malicious app and manages to get the consent of
+                    270,000 users. Because of the flaw, the consulting firm manages to get access to the private
+                    information of 50,000,000 users. Later, the consulting firm sells the information for malicious
+                    purposes.</p>
+            </section>
 
-				<section>
-					<h3>API10: Unsafe Consumption of APIs</h3>
-					<p>Misconfigurations, poor inventory practices, and unsafe third-party API consumption can open doors for various attacks. Prioritizing these areas is crucial for comprehensive API security.</p>
-				</section>
+            <section>
+                <h3>API10: Unsafe Consumption of APIs</h3>
+                <p>Misconfigurations, poor inventory practices, and unsafe third-party API consumption can open doors
+                    for various attacks. Prioritizing these areas is crucial for comprehensive API security.</p>
+            </section>
 
-				<section>
-					<h3>API10: Unsafe Consumption of APIs</h3>
-					<p style="font-size: 30px">An API integrates with a third-party service provider to safely store sensitive user medical information. Data is sent over a secure connection using an HTTP request like the one below:</p>
-					<pre><code>POST /user/store_phr_record
+            <section>
+                <h3>API10: Unsafe Consumption of APIs</h3>
+                <p style="font-size: 30px">An API integrates with a third-party service provider to safely store
+                    sensitive user medical information. Data is sent over a secure connection using an HTTP request like
+                    the one below:</p>
+                <pre><code>POST /user/store_phr_record
 {
   "genome": "ACTAGTAG__TTGADDAAIICCTT…"
 }</code></pre>
-					<pre><code>HTTP/1.1 308 Permanent Redirect
+                <pre><code>HTTP/1.1 308 Permanent Redirect
 Location: https://attacker.com/</code></pre>
-					<p style="font-size: 30px">Since the API blindly follows the third-party redirects, it will repeat the exact same request including the user's sensitive data, but this time to the attacker's server.</p>
-				</section>
-			</section>
+                <p style="font-size: 30px">Since the API blindly follows the third-party redirects, it will repeat the
+                    exact same request including the user's sensitive data, but this time to the attacker's server.</p>
+            </section>
+        </section>
 
-			<section>
-				<section><h3>3. Authentication & Authorization</h3></section>
+        <section>
+            <section><h3>3. Authentication & Authorization</h3></section>
 
-				<section>
-					<h2>Authentication</h2>
-					<p>Authentication is the process of confirming a user's identity. It ensures only legitimate users can access resources.</p>
-					<p>Authentication Methods: Single to Multi-Factor</p>
-				</section>
+            <section>
+                <h2>Authentication</h2>
+                <p>Authentication is the process of confirming a user's identity. It ensures only legitimate users can
+                    access resources.</p>
+                <p>Authentication Methods: Single to Multi-Factor</p>
+            </section>
 
-				<section>
-					<h2>OAuth</h2>
-					<img src="assets/oauth.png" alt="OAuth">
-				</section>
+            <section>
+                <h2>OAuth</h2>
+                <img src="assets/oauth.png" alt="OAuth">
+            </section>
 
-				<section>
-					<h2>JWT (JSON Web Tokens)</h2>
-					<p>JWT Structure</p>
-					<div style="display: flex; justify-content: space-between;">
-						<div style="width: 85%;"><pre><code>{
+            <section>
+                <h2>JWT (JSON Web Tokens)</h2>
+                <p>JWT Structure</p>
+                <div style="display: flex; justify-content: space-between;">
+                    <div style="width: 85%;"><pre><code>{
   "alg": "HS256",
   "typ": "JWT"
 }.
@@ -304,90 +343,123 @@ Location: https://attacker.com/</code></pre>
   "iat": 1516239022
 }.
 [Signature]</code></pre>
-						</div>
-						<div>
-							<img src="assets/jwt.png" alt="jwt">
-						</div>
-					</div>
-				</section>
+                    </div>
+                    <div>
+                        <img src="assets/jwt.png" alt="jwt">
+                    </div>
+                </div>
+            </section>
 
-				<section>
-					<h2>Cookies</h2>
-					<p>State Management and Security</p>
-					<p>Cookies are essential for session management. Proper attribute usage enhances security</p>
-					<p>HttpOnly, Secure, and SameSite are critical for preventing common web vulnerabilities</p>
-				</section>
+            <section>
+                <h2>Cookies</h2>
+                <p>State Management and Security</p>
+                <p>Cookies are essential for session management. Proper attribute usage enhances security</p>
+                <p>HttpOnly, Secure, and SameSite are critical for preventing common web vulnerabilities</p>
+            </section>
 
-				<section>
-					<h2>Cookies</h2>
-					<img src="assets/cookie.png" alt="cookies" style="width: 70%">
-				</section>
+            <section>
+                <h2>Cookies</h2>
+                <img src="assets/cookie.png" alt="cookies" style="width: 70%">
+            </section>
 
-				<section>
-					<h2>Authorization</h2>
-					<p>Authorization takes over after authentication. It's about what an authenticated user is allowed to do. It prevents unauthorized actions within an application.</p>
-					<p>Role-Based Access Control (RBAC)</p>
-					<p>Roles are defined with specific permission sets. Users are assigned one or more roles. This streamlines access control greatly.</p>
-				</section>
-			</section>
+            <section>
+                <h2>Authorization</h2>
+                <p>Authorization takes over after authentication. It's about what an authenticated user is allowed to
+                    do. It prevents unauthorized actions within an application.</p>
+                <p>Role-Based Access Control (RBAC)</p>
+                <p>Roles are defined with specific permission sets. Users are assigned one or more roles. This
+                    streamlines access control greatly.</p>
+            </section>
+        </section>
 
+        <section>
+            <section><h2>4. Secure Authentication & Data Validation</h2></section>
+
+            <section>
+                <h2>Secure Authentication</h2>
+                <ul>
+                    <li>
+                        <div>JWT Security</div>
+                        <div style="font-size: 24px;">
+                            Use short-lived tokens, sign with strong secret keys, store securely (e.g. HttpOnly cookie).
+                        </div>
+                    </li>
+                    <li>
+                        <div>Session Management</div>
+                        <div style="font-size: 24px;">
+                            Use secure, HttpOnly cookies with SameSite=strict. Set session timeout.
+                        </div>
+                    </li>
+                    <li>
+                        <div>Password Hashing</div>
+                        <div style="font-size: 24px;">
+                            Store only hashed+salted passwords using bcrypt, Argon2 or scrypt.
+                        </div>
+                    </li>
+                    <li>
+                        <div>Multi-Factor Authentication</div>
+                        <div style="font-size: 24px;">
+							Add extra security layers beyond passwords.
+                        </div>
+                    </li>
+                    <li>
+                        <div>Avoid Pitfalls</div>
+                        <div style="font-size: 24px;">
+                            Enforce strong passwords, rate-limit login attempts, and avoid sending secrets in URL.
+                        </div>
+                    </li>
+                    <li>
+                        <div>Account Lockout</div>
+                        <div style="font-size: 24px;">
+                            Lock account after X failed attempts to defend against brute-force attacks.
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Data Validation</h2>
+                <ul>
+                    <li>
+                        <div>XSS Prevention</div>
+                        <div style="font-size: 26px;">
+							Sanitize user input using trusted libraries.
+							Avoid eval(), Function(), setTimeout() with code strings.
+                        </div>
+                    </li>
+                    <li>
+                        <div>SQL Injection Mitigation</div>
+                        <div style="font-size: 26px;">
+							Use parameterized queries and ORM safeguards.
+                        </div>
+                    </li>
+                    <li>
+                        <div>Input Validation</div>
+                        <div style="font-size: 26px;">
+                            Validate type, format, and range on both client and server.
+                        </div>
+                    </li>
+                    <li>
+                        <div>Output Encoding</div>
+                        <div style="font-size: 26px;">
+                            Encode HTML, JavaScript, URL, etc., to prevent code execution in output.
+                        </div>
+                    </li>
+                    <li>
+                        <div>File Upload Validation</div>
+                        <div style="font-size: 26px;">
+                            Check MIME type, size, filename, and use antivirus scan for uploaded files.
+                        </div>
+                    </li>
+                </ul>
+            </section>
+		</section>
+
+		<section>
+			<section><h2>5. Browser extensions</h2></section>
 			<section>
-				<section><h2>4. Secure Authentication & Data Validation</h2></section>
-
-				<section>
-					<h2>Secure Authentication</h2>
-					<ul>
-						<li>
-							<div>JWT Security</div>
-							<div style="font-size: 26px;">Use tokens carefully with best practices to avoid leaks.</div>
-						</li>
-						<li>
-							<div>Session Management</div>
-							<div style="font-size: 26px;">Implement secure cookies and proper session expiration.</div>
-						</li>
-						<li>
-							<div>Password Hashing</div>
-							<div style="font-size: 26px;">Use bcrypt or Argon2 to protect stored passwords.</div>
-						</li>
-						<li>
-							<div>Multi-Factor Authentication</div>
-							<div style="font-size: 26px;">Add extra security layers beyond passwords.</div>
-						</li>
-						<li>
-							<div>Avoid Pitfalls</div>
-							<div style="font-size: 26px;">Beware of common authentication errors like weak passwords.</div>
-						</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Data Validation</h2>
-					<ul>
-						<li>
-							<div>XSS Prevention</div>
-							<div style="font-size: 26px;">Sanitize user input using trusted libraries.</div>
-						</li>
-						<li>
-							<div>SQL Injection Mitigation</div>
-							<div style="font-size: 26px;">Use parameterized queries and ORM safeguards.</div>
-						</li>
-						<li>
-							<div>Input Validation</div>
-							<div style="font-size: 26px;">Validate data on both client and server sides.</div>
-						</li>
-						<li>
-							<div>Output Encoding</div>
-							<div style="font-size: 26px;">Encode output to prevent code injection.</div>
-						</li>
-					</ul>
-				</section>
-			</section>
-
-			<section>
-				<section><h2>5. Browser extensions</h2></section>
-				<section>
-					<h2>Manifest file format</h2>
-					<pre><code>{
+				<h2>Manifest file format</h2>
+				<pre><code>{
   "manifest_version": 3,
   "name": "Run script automatically",
   "description": "Runs a script on www.example.com automatically when user installs the extension",
@@ -410,53 +482,80 @@ Location: https://attacker.com/</code></pre>
   },
   "permissions": ["activeTab", "storage"]
 }</code></pre>
-				</section>
 			</section>
 
 			<section>
-				<h2>6. Cheat Sheets:</h2>
+				<h2>Web Scrapping</h2>
+				<p>Web Scraping is the process of automatically collecting data from websites using software tools.</p>
+			</section>
+
+			<section>
+				<h2>robots.txt</h2>
+				<p>robots.txt is a text file in the root of a website (https://example.com/robots.txt) that tells search bots (e.g. Googlebot) what can and cannot be indexed.</p>
+				<pre><code>User-agent: *
+Disallow: /api/
+Disallow: /admin/
+Allow: /public/
+Sitemap: https://example.com/sitemap.xml
+</code></pre>
 				<ul>
-					<li>
-						<a href="https://infosec.mozilla.org/guidelines/web_security.html#web-security-cheat-sheet" target="_blank">Web Security Cheat Sheet</a>
-					</li>
-					<li>
-						<a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" target="_blank">Cross Site Scripting Prevention Cheat Sheet</a>
-					</li>
-					<li>
-						<a href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html" target="_blank">Content Security Policy Cheat Sheet</a>
-					</li>
-					<li>
-						<a href="https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html" target="_blank">Clickjacking Defense Cheat Sheet</a>
-					</li>
-					<li>
-						<a href="https://cheatsheetseries.owasp.org/cheatsheets/DOM_Clobbering_Prevention_Cheat_Sheet.html" target="_blank">DOM Clobbering Prevention Cheat Sheet</a>
-					</li>
-					<li>
-						<a href="https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html" target="_blank">DOM based XSS Prevention Cheat Sheet</a>
-					</li>
+					<li>all bots are not allowed to scan /api/ and /admin/</li>
+					<li>allowed /public/</li>
+					<li>sitemap is explicitly specified</li>
 				</ul>
 			</section>
+		</section>
 
-			<section>
-				<section><h2>7. Conclusion / Q&A</h2></section>
-			</section>
-		</div>
-	</div>
+		<section>
+			<h2>6. Cheat Sheets:</h2>
+			<ul>
+				<li>
+					<a href="https://infosec.mozilla.org/guidelines/web_security.html#web-security-cheat-sheet"
+					   target="_blank">Web Security Cheat Sheet</a>
+				</li>
+				<li>
+					<a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+					   target="_blank">Cross Site Scripting Prevention Cheat Sheet</a>
+				</li>
+				<li>
+					<a href="https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+					   target="_blank">Content Security Policy Cheat Sheet</a>
+				</li>
+				<li>
+					<a href="https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html"
+					   target="_blank">Clickjacking Defense Cheat Sheet</a>
+				</li>
+				<li>
+					<a href="https://cheatsheetseries.owasp.org/cheatsheets/DOM_Clobbering_Prevention_Cheat_Sheet.html"
+					   target="_blank">DOM Clobbering Prevention Cheat Sheet</a>
+				</li>
+				<li>
+					<a href="https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html"
+					   target="_blank">DOM based XSS Prevention Cheat Sheet</a>
+				</li>
+			</ul>
+		</section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			Reveal.initialize({
-				hash: true,
-				slideNumber: true,
-				controls: true,
-				progress: true,
-				transition: 'slide',
-				backgroundTransition: 'fade',
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+		<section>
+			<section><h2>7. Conclusion / Q&A</h2></section>
+		</section>
+	</section>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        slideNumber: true,
+        controls: true,
+        progress: true,
+        transition: 'slide',
+        backgroundTransition: 'fade',
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+</script>
+</body>
 </html>
