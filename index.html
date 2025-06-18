@@ -453,6 +453,19 @@ Location: https://attacker.com/</code></pre>
                     </li>
                 </ul>
             </section>
+
+            <section>
+                <h2>Examples</h2>
+              <pre><code>const userColor = 'red; background-image: url("https://hack.com/steal-cookie")';
+document.body.style = `color: ${userColor}`;</code></pre>
+              <pre><code>const userColor = 'red; background-image: url("hack.com")';
+const safeColor = CSS.escape(userColor);
+document.body.style.color = safeColor;</code></pre>
+                <hr>
+                <pre><code>const userQuery = 'javascript:alert("XSS")';
+const safeUrl = `https://example.com?redirect=${encodeURIComponent(userQuery)}`;
+// https://example.com?redirect=javascript%3Aalert(%22XSS%22)</code></pre>
+            </section>
 		</section>
 
 		<section>
